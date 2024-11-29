@@ -9,7 +9,7 @@ source:
     - build-pl.patch
 
 build:
-  number: 4
+  number: 5
 
 requirements:
   build:
@@ -41,7 +41,8 @@ test:
 extra:
   additional-platforms:
     - linux-aarch64
-    - osx-arm64
+  # missing perl-data-dumper, perl-bioperl-core
+  # - osx-arm64
 
 about:
   home: 'http://search.cpan.org/~lds/Bio-SamTools-1.43/'
