@@ -33,6 +33,11 @@ test:
   imports:
     - Ace
 
+extra:
+  additional-platforms:
+    - linux-aarch64
+    - osx-arm64
+
 about:
   home: http://metacpan.org/pod/AcePerl
   license: unknown
