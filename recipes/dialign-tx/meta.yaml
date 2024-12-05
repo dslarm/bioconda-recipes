@@ -28,3 +28,8 @@ about:
   license: LGPL
   license_file: LICENSE.TXT
   summary: DIALIGN-TX is a greedy and progressive approaches for segment-based multiple sequence alignment
+
+extra:
+  additional-platforms:
+    - linux-aarch64
+    - osx-arm64

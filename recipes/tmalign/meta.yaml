@@ -26,6 +26,10 @@ about:
   license: BSD-like
 
 extra:
+  additional-platforms:
+    - linux-aarch64
+    - osx-arm64
+
   identifiers:
     - doi:10.1093/nar/gki524
     - doi:10.1002/prot.20264
