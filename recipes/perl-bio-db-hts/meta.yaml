@@ -47,6 +47,11 @@ test:
     - Bio::DB::HTS::Target
     - Bio::DB::HTS::VCF
 
+
+extra:
+  additional-platforms:
+    - linux-aarch64
+    
 about:
   home: https://metacpan.org/pod/Bio::DB::HTS
   license: Apache v2.0
