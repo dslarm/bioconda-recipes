@@ -9,7 +9,7 @@ package:
   version: 3.697
 
 source:
-  url: http://evolution.gs.washington.edu/phylip/download/phylip-3.697.tar.gz
+  url: https://phylipweb.github.io/phylip/download/phylip-3.697.tar.gz
   md5: 0e83d17fb4d668213603c86bc21d9012
   patches:
     - makefile.patch
