@@ -27,7 +27,7 @@ requirements:
   run:
     - r-base
 source:
-  md5: 17433e48365e2cb89bc5e59de7ead46b
+  sha: 8518e462c1ef103ab059d059d871afc444e48f56fe6b3afdb60dc1abf6c9b09d
   url:
     - https://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/{{ name }}_{{ version }}.tar.gz
     - https://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/Archive/{{ name }}/{{ name }}_{{ version }}.tar.gz
