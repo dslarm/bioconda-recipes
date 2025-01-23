@@ -15,7 +15,7 @@ source:
 build:
   number: 1
   run_exports:
-    - {{ pin_subpackage(name, max_pin="x") }}
+    - {{ pin_subpackage("bioconductor-"name, max_pin="x") }}
   rpaths:
     - lib/R/lib/
     - lib/
