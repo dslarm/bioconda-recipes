@@ -25,13 +25,13 @@ requirements:
     - 'bioconductor-biocgenerics'
     - 'bioconductor-genomicranges'
     - 'bioconductor-iranges'
-    - 'bioconductor-s4vectors'
+    - 'bioconductor-s4vectors=0.36.0'
     - r-base
   run:
     - 'bioconductor-biocgenerics'
     - 'bioconductor-genomicranges'
     - 'bioconductor-iranges'
-    - 'bioconductor-s4vectors'
+    - 'bioconductor-s4vectors=0.36.0'
     - r-base
 test:
   commands:
