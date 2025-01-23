@@ -46,7 +46,7 @@ requirements:
     - r-base
 
 source:
-  md5: 6f87d627de90deccd2bc907b36d6d75d
+  sha: da6d99d0b27ae83002845bcc46c43cb3bb74aeedbaa278c64a4aafc663235415
   url:
     - https://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/{{ name }}_{{ version }}.tar.gz
     - https://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/Archive/{{ name }}/{{ name }}_{{ version }}.tar.gz
