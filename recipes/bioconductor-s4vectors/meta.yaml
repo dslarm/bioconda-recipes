@@ -42,7 +42,7 @@ requirements:
     - libblas
     - liblapack
   run:
-    - bioconductor-biocgenerics >=0.44.0,<0.53.0
+    - bioconductor-biocgenerics >=0.52.0,<0.53.0
     - r-base
 
 source:
