@@ -35,7 +35,7 @@ requirements:
     - {{ compiler('c') }}
     - make
   host:
-    - bioconductor-biocgenerics >=0.52.0,<0.53.0
+    - bioconductor-biocgenerics >=0.44.0,<0.45.0
     - bioconductor-genomeinfodb >=1.42.0,<1.43.0
     - bioconductor-iranges >=2.40.0,<2.41.0
     - bioconductor-s4vectors >=0.44.0,<0.45.0
@@ -44,7 +44,7 @@ requirements:
     - libblas
     - liblapack
   run:
-    - bioconductor-biocgenerics >=0.52.0,<0.53.0
+    - bioconductor-biocgenerics >=0.44.0,<0.45.0
     - bioconductor-genomeinfodb >=1.42.0,<1.43.0
     - bioconductor-iranges >=2.40.0,<2.41.0
     - bioconductor-s4vectors >=0.44.0,<0.45.0
