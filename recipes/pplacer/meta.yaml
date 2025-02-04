@@ -36,5 +36,8 @@ about:
   dev_url: https://github.com/matsen/pplacer/
 
 extra:
+  additional-platforms:
+    - linux-aarch64
+    
   skip-lints:
     - should_be_noarch_generic
