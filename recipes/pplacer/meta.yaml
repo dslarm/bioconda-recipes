@@ -19,7 +19,8 @@ requirements:
 
   host:
     - ocaml
-
+    - ocamlbuild
+    
 test:
   commands:
     - pplacer --help > /dev/null
