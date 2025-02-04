@@ -1,17 +1,24 @@
 {% set version = "1.1.alpha19" %}
-{% set sha256 = "9131b45c35ddb927f866385f149cf64af5dffe724234cd4548c22303a992347d" %}
+{% set sha256 = "0e74f3bdaf996c6e54695e23bc2180877f2de0fadc80f0fe9d066aa445b3347c" %}
 
 package:
   name: pplacer
   version: '{{ version }}'
 
 source:
-  url: https://github.com/matsen/pplacer/releases/download/v{{ version }}/pplacer-linux-v{{ version }}.zip
+  url: https://github.com/matsen/pplacer/archive/refs/tags/v{{ version }}.tar.gz
   sha256: '{{ sha256 }}'
 
 build:
   skip: true   # [osx]
-  number: 2
+  number: 3
+
+requirements:
+  build:
+    - make
+
+  host:
+    - ocaml
 
 test:
   commands:
