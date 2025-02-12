@@ -1,7 +1,8 @@
+{% set name = "bwa-meme" %}
 {% set version = "1.0.6" %}
 
 package:
-  name: bwa-meme
+  name: {{name}}
   version: {{ version }}
 
 source:
@@ -10,7 +11,10 @@ source:
 
 
 build:
-  number: 3
+  number: 4
+  run_exports:
+    - {{ pin_subpackage(name, max_pin = "x") }}
+
   # Compilation fails on OSX:
   #   ext/safestringlib/include/safe_mem_lib.h:100:16: error: conflicting types for 'memset_s'
   #   extern errno_t memset_s(void *dest, rsize_t dmax, uint8_t value);
@@ -49,5 +53,8 @@ about:
   summary: Faster BWA-MEM2 using learned-index
 
 extra:
+  additional-platforms:
+    - linux-aarch64
+
   identifiers:
     - doi:10.1093/bioinformatics/btac137
