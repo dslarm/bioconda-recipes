@@ -13,7 +13,7 @@ source:
 
 build:
   skip: True  # [osx]
-  number: 1
+  number: 2
   run_exports:
     - {{ pin_subpackage('smoothxg', max_pin="x") }}
 
@@ -42,6 +42,9 @@ about:
   summary: Local reconstruction of variation graphs using partial order alignment
 
 extra:
+  additional-platforms:
+    - linux-aarch64
+
   skip-lints:
     - uses_vcs_url
   recipe-maintainers:
