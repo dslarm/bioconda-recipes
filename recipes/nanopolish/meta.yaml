@@ -6,7 +6,10 @@ package:
   version: {{ version }}
 
 build:
-  number: 5
+  number: 6
+  run_exports:
+    - {{ pin_subpackage(name, max_pin = "x.x") }}
+
 
 source:
   git_url: https://github.com/jts/nanopolish
@@ -45,6 +48,9 @@ about:
   summary: 'Signal-level algorithms for MinION data.'
 
 extra:
+  additional-platforms:
+    - linux-aarch64
+
   skip-lints:
     - uses_vcs_url
   identifiers:
