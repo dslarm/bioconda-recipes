@@ -1,7 +1,8 @@
+{% set name = "deeparg" %}
 {% set version = "1.0.4" %}
 
 package:
-  name: deeparg
+  name: {{name}}
   version: '{{version}}'
 
 source:
@@ -11,7 +12,7 @@ source:
 build:
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vvv
   noarch: python
-  number: 0
+  number: 1
   entry_points:
     - deeparg = deeparg.entry:main
   run_exports:
@@ -51,3 +52,6 @@ about:
   license_family: MIT
   license_file: "LICENSE.txt"
   summary: A deep learning based approach to predict Antibiotic Resistance Genes (ARGs) from metagenomes
+extra:
+  additional-platforms:
+    - linux-aarch64
