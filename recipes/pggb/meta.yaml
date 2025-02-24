@@ -10,7 +10,7 @@ source:
   sha256: a687d5268b77d6bbbdb026d379975eed2afff148d7d73697a8421ca39b3ddbe9
 
 build:
-  number: 0
+  number: 1
   skip: true # [osx]
   run_exports:
   - {{ pin_subpackage(name, max_pin='x.x') }}
@@ -45,6 +45,9 @@ about:
   summary: PanGenome Graph Building pipeline renders
 
 extra:
+  additional-platforms:
+    - linux-aarch64
+
   recipe-maintainers:
     - AndreaGuarracino
   skip-lints:
