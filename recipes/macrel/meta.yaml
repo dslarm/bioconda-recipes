@@ -12,7 +12,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   entry_points:
     - macrel= macrel.main:main
   script: python -m pip install --disable-pip-version-check --no-cache-dir --ignore-installed --no-deps -vv .
@@ -50,6 +50,9 @@ about:
   dev_url: https://github.com/BigDataBiology/macrel
   
 extra:
+  additional-platforms:
+    - linux-aarch64
+
   recipe-maintainers:
     - celiosantosjr
     - luispedro
