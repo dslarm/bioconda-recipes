@@ -1,7 +1,8 @@
+{% set name = "sequencetools" %}
 {% set version = "1.6.0.0" %}
 
 package:
-  name: sequencetools
+  name: {{name}}
   version: {{ version }}
 
 source:
@@ -13,7 +14,7 @@ source:
     md5: d4d9617e35eabb1c71fe5a01d5c9f4d7 # [osx and arm64]
   
 build:
-  number: 0
+  number: 1
   script:
     - "mkdir -p $PREFIX/bin"
     - "mv pileupCaller* $PREFIX/bin/pileupCaller"
@@ -44,5 +45,8 @@ about:
   summary: A tool (pileupCaller) for processing ancient DNA sequencing data
 
 extra:
+  additional-platforms:
+    - linux-aarch64
+
   additional-platforms:
     - osx-arm64
