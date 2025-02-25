@@ -1,5 +1,6 @@
+{% set name = ""metagene_annotator"" %}
 package:
-  name: "metagene_annotator"
+  name: {{name}}
   version: "1.0"
 
 source:
@@ -9,7 +10,10 @@ source:
   sha256: "17a08b3e4c1dd638f2ab0e5cd7aedb70b05474d9ab67c9fefd20a7accda6f92d"    # [osx]
 
 build:
-  number: 3
+  number: 4
+  run_exports:
+    - {{ pin_subpackage(name, max_pin = "x") }}
+
   binary_relocation: False # [osx]
 
 requirements:
@@ -26,5 +30,8 @@ about:
   summary: "MetaGeneAnnotator is a gene-finding program for prokaryote and phage"
 
 extra:
+  additional-platforms:
+    - linux-aarch64
+
   skip-lints:
     - should_not_be_noarch_source
