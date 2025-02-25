@@ -15,7 +15,10 @@ source:
     sha256: {{ osx_sha256 }} # [osx]
 
 build:
-  number: 0
+  number: 1
+  run_exports:
+    - {{ pin_subpackage(name, max_pin = "x") }}
+
 
 requirements:
   run:
@@ -36,6 +39,9 @@ about:
   summary: A tool for short-read processing with a focus on metagenomics
 
 extra:
+  additional-platforms:
+    - linux-aarch64
+
   recipe-maintainers:
     - luispedro
   identifiers:
