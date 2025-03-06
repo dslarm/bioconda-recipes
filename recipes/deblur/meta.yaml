@@ -1,7 +1,8 @@
+{% set name = "deblur" %}
 {% set version = "1.1.1" %}
 
 package:
-  name: deblur
+  name: {{name}}
   version: {{ version }}
 
 source:
@@ -10,7 +11,10 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
+  run_exports:
+    - {{ pin_subpackage(name, max_pin = "x") }}
+
   script: {{ PYTHON }} -m pip install . --ignore-installed --no-deps -vv
 
 requirements:
@@ -41,5 +45,8 @@ about:
   summary: Deblur is a greedy deconvolution algorithm based on known read error profiles.
 
 extra:
+  additional-platforms:
+    - linux-aarch64
+
   container:
     extended-base: True
