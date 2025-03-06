@@ -1,9 +1,13 @@
+{% set name = "bcbio-nextgen" %}
 package:
-  name: bcbio-nextgen
+  name: {{name}}
   version: '1.2.9'
 
 build:
-  number: 3
+  number: 4
+  run_exports:
+    - {{ pin_subpackage(name, max_pin = "x") }}
+
   # Currently hitting conda errors on OSX
   # ERROR:conda.core.link:An error occurred while installing package
   # FileNotFoundError(2, "No such file or directory: '_placehold_pl/bin/python3.7'
@@ -85,5 +89,8 @@ about:
   summary: Validated, scalable, community developed variant calling, RNA-seq and small RNA analysis
 
 extra:
+  additional-platforms:
+    - linux-aarch64
+
   identifiers:
     - biotools:bcbio-nextgen
