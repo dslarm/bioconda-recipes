@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   entry_points:
     - thapbi_pict = thapbi_pict.__main__:main
   script: "{{ PYTHON }} -m pip install . --no-deps --no-build-isolation --no-cache-dir -vvv"
@@ -64,5 +64,8 @@ about:
   dev_url: https://github.com/peterjc/thapbi-pict
 
 extra:
+  additional-platforms:
+    - linux-aarch64
+
   recipe-maintainers:
     - peterjc
