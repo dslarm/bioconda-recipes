@@ -10,7 +10,7 @@ source:
   sha256: 5f8a4e743bf6e5a17ad4e6fe79be7755b45a5005d048fbf3d8eb90762236c68e
 
 build:
-  number: 1
+  number: 2
   noarch: python
   entry_points:
     - mhcflurry-downloads = mhcflurry.downloads_command:run
@@ -70,6 +70,9 @@ about:
   summary: "MHC Binding Predictor"
 
 extra:
+  additional-platforms:
+    - linux-aarch64
+
   recipe-maintainers:
     - jonasscheid
   identifiers:
