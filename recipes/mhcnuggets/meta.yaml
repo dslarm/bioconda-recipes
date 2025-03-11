@@ -10,7 +10,10 @@ source:
   sha256: c0c853031b8cc0b8d7e08674500d4d5929c0720e4e0a2e421272437022f30406
 
 build:
-  number: 0
+  number: 1
+  run_exports:
+    - {{ pin_subpackage(name, max_pin = "x") }}
+
   noarch: python
   script: "{{ PYTHON }} -m pip install . -vv"
 
@@ -52,5 +55,8 @@ about:
     the Tensforflow backend."
 
 extra:
+  additional-platforms:
+    - linux-aarch64
+
   recipe-maintainers:
     - jonasscheid
