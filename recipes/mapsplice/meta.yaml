@@ -1,8 +1,9 @@
+{% set name = "mapsplice" %}
 {% set version = "2.2.1" %}
 {% set sha256hash = "4f3c1cb49ba0abcfc952de5946ee0b56db28c51f4f4d4f5abca66b4461ca7d05" %}
 
 package:
-  name: mapsplice
+  name: {{name}}
   version: {{ version }}
 
 source:
@@ -16,7 +17,10 @@ source:
     - patches/samtools_misc.patch
 
 build:
-  number: 1
+  number: 2
+  run_exports:
+    - {{ pin_subpackage(name, max_pin = "x") }}
+
   skip: True # [osx]
 
 requirements:
@@ -46,5 +50,8 @@ about:
   license_file: Copyright.txt
 
 extra:
+  additional-platforms:
+    - linux-aarch64
+
   identifiers:
     - biotools:mapsplice
