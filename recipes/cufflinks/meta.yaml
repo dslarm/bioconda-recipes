@@ -1,9 +1,13 @@
+{% set name = "cufflinks" %}
 package:
-  name: cufflinks
+  name: {{name}}
   version: 2.2.1
 
 build:
-  number: 2
+  number: 3
+  run_exports:
+    - {{ pin_subpackage(name, max_pin = "x") }}
+
 
 source:
   - url: http://cole-trapnell-lab.github.io/cufflinks/assets/downloads/cufflinks-2.2.1.OSX_x86_64.tar.gz # [osx]
@@ -31,6 +35,9 @@ about:
   summary: Transcriptome assembly and differential expression analysis for RNA-Seq.
 
 extra:
+  additional-platforms:
+    - linux-aarch64
+
   identifiers:
     - biotools:cufflinks
   skip-lints:
