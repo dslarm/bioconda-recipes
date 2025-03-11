@@ -10,7 +10,10 @@ source:
   sha256: d6ab7d472d4025c7ac9f3db39cffaf500c011c5d3efb6d9423c826d138ae341e
 
 build:
-  number: 0
+  number: 1
+  run_exports:
+    - {{ pin_subpackage(name, max_pin = "x") }}
+
   noarch: python
   script: "{{ PYTHON }} -m pip install . -vv"
 
@@ -96,6 +99,9 @@ about:
   dev_url: https://github.com/KohlbacherLab/epytope/tree/develop
 
 extra:
+  additional-platforms:
+    - linux-aarch64
+
   recipe-maintainers:
     - christopher-mohr
     - jonasscheid
