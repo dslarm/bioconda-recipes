@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   skip: True  # [osx]
   binary_relocation: False
   run_exports:
@@ -27,6 +27,9 @@ about:
   summary: Iso-Seq - Scalable De Novo Isoform Discovery
 
 extra:
+  additional-platforms:
+    - linux-aarch64
+
   recipe-maintainers:
     - armintoepfer
     - pb-dseifert
