@@ -10,7 +10,7 @@ source:
   sha256: 89601814e220f3bc4e062113281ce282767dffa8d65b4bf085597c9db47033da
 
 build:
-  number: 0
+  number: 1
   skip: True  # [osx]
   binary_relocation: False
   run_exports:
@@ -27,6 +27,9 @@ about:
   summary: lima - The PacBio Barcode Demultiplexer
 
 extra:
+  additional-platforms:
+    - linux-aarch64
+
   recipe-maintainers:
     - armintoepfer
     - pb-dseifert
