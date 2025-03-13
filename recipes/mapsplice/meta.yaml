@@ -7,7 +7,7 @@ package:
   version: {{ version }}
 
 source:
-  url: http://protocols.netlab.uky.edu/~zeng/MapSplice-v{{ version }}.zip
+  url: https://protocols.netlab.uky.edu/~zeng/MapSplice-v{{ version }}.zip
   sha256: {{ sha256hash }}
   patches:
     - patches/mapsplice.patch
