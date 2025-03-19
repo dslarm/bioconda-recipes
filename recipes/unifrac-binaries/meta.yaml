@@ -19,28 +19,25 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - gfortran_linux-64 # [linux]
+    - {{ compiler('fortran') }}
     - hdf5 =*=nompi*
-    - mkl-include
+    - mkl-include   # [x86_64]
+    - openblas
     - hdf5-static =*=nompi*
     - lz4
     - zlib
-    - libcblas
-    - liblapacke
     - make
     - curl
   host:
     - lz4
     - zlib
-    - libcblas
-    - liblapacke
+    - openblas
     - libaec
     - mpi
   run:
     - lz4
     - zlib
-    - libcblas
-    - liblapacke
+    - libopenblas
     - libaec
     - mpi
 

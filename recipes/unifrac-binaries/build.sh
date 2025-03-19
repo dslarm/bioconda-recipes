@@ -12,17 +12,6 @@ env |grep PREFIX
 echo "Arch: $(uname -s)"
 pwd
 
-if [[ "$(uname -s)" == "Linux" ]];
-then
-          which x86_64-conda-linux-gnu-gcc
-          x86_64-conda-linux-gnu-gcc -v
-          x86_64-conda-linux-gnu-g++ -v
-else
-          which clang
-          clang -v
-fi
-which h5c++
-
 
 if [[ "$(uname -s)" == "Linux" ]];
 then
