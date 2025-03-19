@@ -1,7 +1,8 @@
+{% set name = "unifrac-binaries" %}
 {% set version = "1.4" %}
 
 package:
-  name: unifrac-binaries
+  name: {{name}}
   version: {{ version }}
 
 source:
@@ -9,7 +10,10 @@ source:
   sha256: 7067a3bcee8702caa8c3ea6e5fd8f1bb059f84a791b237762730fbf232ae785f
 
 build:
-  number: 1
+  number: 2
+  run_exports:
+    - {{ pin_subpackage(name, max_pin = "x") }}
+
 
 requirements:
   build:
@@ -63,6 +67,9 @@ about:
   dev_url: https://github.com/biocore/unifrac-binaries
 
 extra:
+  additional-platforms:
+    - linux-aarch64
+
   recipe-maintainers:
     - sfiligoi
     - wasade
