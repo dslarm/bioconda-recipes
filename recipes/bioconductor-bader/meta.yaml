@@ -10,13 +10,16 @@ about:
   summary: Bayesian Analysis of Differential Expression in RNA Sequencing Data
 
 build:
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
   run_exports: '{{ pin_subpackage("bioconductor-bader", max_pin="x.x") }}'
 
 extra:
+  additional-platforms:
+    - linux-aarch64
+
   identifiers:
     - biotools:bader
     - doi:10.1038/nmeth.3252
