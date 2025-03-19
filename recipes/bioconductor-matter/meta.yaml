@@ -10,13 +10,16 @@ about:
   summary: Out-of-core statistical computing and signal processing
 
 build:
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
   run_exports: '{{ pin_subpackage("bioconductor-matter", max_pin="x.x") }}'
 
 extra:
+  additional-platforms:
+    - linux-aarch64
+
   identifiers:
     - biotools:matter
     - doi:10.1038/nmeth.3252
