@@ -1,9 +1,10 @@
+{% set name = "mothur" %}
 {% set mothurVersion = "1.48.0" %}
 {% set mothurSha256 = "9494406abd8d14b821782ab9db811f045ded9424f28f01234ee6764d4e78941d" %}
 {% set vsearchVersion = "2.15.2" %}
 
 package:
-  name: mothur
+  name: {{name}}
   version: {{ mothurVersion }}
 
 source:
@@ -13,7 +14,10 @@ source:
     - makefile.patch
 
 build:
-  number: 3
+  number: 4
+  run_exports:
+    - {{ pin_subpackage(name, max_pin = "x") }}
+
 
 requirements:
   build:
@@ -53,6 +57,9 @@ about:
   dev_url: https://github.com/mothur/mothur
 
 extra:
+  additional-platforms:
+    - linux-aarch64
+
   identifiers:
     - doi:10.1128/AEM.01541-09
     - usegalaxy-eu:mothur_get_label
