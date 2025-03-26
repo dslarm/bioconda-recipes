@@ -10,7 +10,7 @@ source:
   sha256: e96585a06fe0a386d940c4bd31a595356f0041ae8b063fd55108eb4e84fe1c15
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - drop=drop.cli:main
@@ -79,6 +79,9 @@ about:
   dev_url: https://github.com/gagneurlab/drop
 
 extra:
+  additional-platforms:
+    - linux-aarch64
+
   container:
     # click requires a unicode locale when used with Python 3
     # extended-base generates en_US.UTF-8 locale and sets LC_ALL, LANG properly
