@@ -1,7 +1,8 @@
+{% set name = "maker" %}
 {% set blast_version = "2.14.1" %}
 
 package:
-  name: maker
+  name: {{name}}
   version: 3.01.03
 
 source:
@@ -12,7 +13,7 @@ source:
     - "mpi_init.patch"
 
 build:
-  number: 4
+  number: 5
   run_exports:
     - {{ pin_subpackage("maker", max_pin="x") }}
 
@@ -71,6 +72,9 @@ test:
     - maker --version
 
 extra:
+  additional-platforms:
+    - linux-aarch64
+
   container:
     # mpich needs /etc/resolv.conf : https://github.com/bioconda/bioconda-recipes/issues/11583
     extended-base: true
