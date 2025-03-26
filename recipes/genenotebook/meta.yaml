@@ -24,7 +24,10 @@ requirements:
     - mongodb >=5.0
 
 build:
-  number: 3
+  number: 4
+  run_exports:
+    - {{ pin_subpackage(name, max_pin = "x") }}
+
 
 test:
   commands:
@@ -35,3 +38,6 @@ about:
   license: AGPL-3.0
   license_file: LICENSE
   summary: A colleborative notebook for comparative genomics
+extra:
+  additional-platforms:
+    - linux-aarch64
