@@ -10,7 +10,7 @@ source:
   sha256: a29bf3f00ab9c9ee04218154e0afc8f799bf23674eb99c1a9ed4de1f4059a48d
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage(name, max_pin='x') }}
 
@@ -62,3 +62,4 @@ about:
 extra:
   additional-platforms:
     - linux-aarch64
+    - osx-arm64
