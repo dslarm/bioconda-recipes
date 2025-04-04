@@ -27,6 +27,7 @@ requirements:
     - pandas
     - python
     - samtools >=1.9
+    - libboost-python-devel
     - boost-cpp
   run:
     - python
