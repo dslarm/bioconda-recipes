@@ -11,7 +11,10 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 5
+  number: 6
+  run_exports:
+    - {{ pin_subpackage(name, max_pin = "x") }}
+
   skip: True  # [osx]
 
 requirements:
@@ -65,5 +68,8 @@ about:
   dev_url: https://github.com/sib-swiss/pftools3
 
 extra:
+  additional-platforms:
+    - linux-aarch64
+
   container:
     extended-base: True
