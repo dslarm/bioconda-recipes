@@ -16,7 +16,10 @@ source:
     - "no_setup.patch"
 
 build:
-  number: 2
+  number: 3
+  run_exports:
+    - {{ pin_subpackage(name, max_pin = "x") }}
+
   skip: True  # [osx]
 
 requirements:
@@ -68,6 +71,9 @@ about:
   dev_url: https://github.com/ebi-pf-team/interproscan
 
 extra:
+  additional-platforms:
+    - linux-aarch64
+
   maintainers:
     - abretaud
   identifiers:
