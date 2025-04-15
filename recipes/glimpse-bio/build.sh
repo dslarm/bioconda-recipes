@@ -3,6 +3,15 @@
 export COMMIT_VERS="${PKG_VERSION}"
 export COMMIT_DATE="$(date -Idate -u)"
 
+
+# CXXFLAG is not a typo.
+if [[ "$(uname -m)" = "x86_64" ]]; then
+    export CXXFLAG="$CXXFLAGS ${PREFIX} -D__COMMIT_ID__='\"${COMMIT_VERS}\"' -D__COMMIT_DATE__='\"${COMMIT_DATE}\"' -Wno-ignored-attributes -O3 -mavx2 -mfma"
+else
+    export CXXFLAG="$CXXFLAGS ${PREFIX} -D__COMMIT_ID__='\"${COMMIT_VERS}\"' -D__COMMIT_DATE__='\"${COMMIT_DATE}\"' -Wno-ignored-attributes -O3"
+fi
+
+
 for subdir in chunk concordance split_reference phase ligate
 
 do
@@ -12,7 +21,7 @@ do
         -j 4 \
         DYN_LIBS="-lz -lpthread -lbz2 -llzma -lcurl -lhts -ldeflate -lm" \
         CXX="$CXX -std=c++17" \
-        CXXFLAG="$CXXFLAGS ${PREFIX} -D__COMMIT_ID__='\"${COMMIT_VERS}\"' -D__COMMIT_DATE__='\"${COMMIT_DATE}\"' -Wno-ignored-attributes -O3 -mavx2 -mfma" \
+	CXXFLAGS="${CXXFLAGS}" \
         LDFLAG="$LDFLAGS" \
         HTSLIB_INC="$PREFIX" \
         HTSLIB_LIB="-lhts" \
