@@ -14,7 +14,10 @@ source:
     sha256: {{ sha256_osx }} # [osx]
 
 build:
-  number: 1
+  number: 2
+  run_exports:
+    - {{ pin_subpackage(name, max_pin = "x") }}
+
 
 requirements:
   run:
@@ -33,6 +36,9 @@ about:
   summary: 'PureCLIP is a tool to detect protein-RNA interaction footprints from single-nucleotide CLIP-seq data, such as iCLIP and eCLIP.'
 
 extra:
+  additional-platforms:
+    - linux-aarch64
+
   identifiers:
     - doi:10.1186/s13059-017-1364-2
   skip-lints:
