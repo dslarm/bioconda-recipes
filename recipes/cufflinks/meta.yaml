@@ -4,7 +4,7 @@ package:
   version: 2.2.1
 
 build:
-  number: 3
+  number: 4
   run_exports:
     - {{ pin_subpackage(name, max_pin = "x") }}
 
@@ -48,5 +48,3 @@ extra:
 
   identifiers:
     - biotools:cufflinks
-  skip-lints:
-    - should_be_noarch_generic
