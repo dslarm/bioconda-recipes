@@ -9,6 +9,7 @@ fi
 
 
 if [[ "$(uname -m)" == "aarch64" ]]; then
+    autoreconf --install
     ./configure --prefix="${PREFIX}"
     make CXXFLAGS="${CXXFLAGS}" CFLAGS="${CFLAGS}" CC="${CC}" CXX="{C$XX}"  -j ${CPU_COUNT}
     make install
