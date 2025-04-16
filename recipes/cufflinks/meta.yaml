@@ -15,11 +15,19 @@ source:
     patches:  # [osx]
       - cuffmerge.python3.patch # [py3k and osx]
   - url: http://cole-trapnell-lab.github.io/cufflinks/assets/downloads/cufflinks-2.2.1.Linux_x86_64.tar.gz # [linux]
-    sha256: 39f812452cae26462e5d2671d38104d9e8ef30aaf9ab6dea8ca57f50f46448e4  # [linux]
-    patches:  # [linux]
-      - cuffmerge.python3.patch # [py3k and linux]
-
+    sha256: 39f812452cae26462e5d2671d38104d9e8ef30aaf9ab6dea8ca57f50f46448e4  # [linux and x86_64]
+    patches:  # [linux and x86_64]
+      - cuffmerge.python3.patch # [py3k and linux and x86_64]
+  - url: https://github.com/cole-trapnell-lab/cufflinks/archive/refs/tags/v2.2.1.tar.gz  # [linux and aarch64]
+    sha256: c069c8666c2f7d6b382d08c75aacd08e4c341996228fbb3687a147f2aacbc1ab  # [linux and aarch64]
+    patches:
+      - cuffmerge.python3.patch # [py3k and linux and aarch64]
+  
 requirements:
+  build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - make
   host:
     - python
   run:
