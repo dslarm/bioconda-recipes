@@ -10,7 +10,7 @@ source:
   sha256: 12a6bc1f579513cac8b9167cce4e363655cc8eba26b7d9fe1170dfe95e044f42
 
 build:
-  number: 11
+  number: 12
   run_exports:
     - {{ pin_subpackage("perl-bio-db-hts", max_pin="x") }}
 
@@ -55,3 +55,4 @@ about:
 extra:
   additional-platforms:
     - linux-aarch64
+    - osx-arm64
