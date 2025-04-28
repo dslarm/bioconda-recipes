@@ -13,7 +13,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   preserve_egg_dir: true
   run_exports:
      - {{ pin_subpackage('gcnvkernel', max_pin="x") }}
@@ -64,3 +64,6 @@ about:
   license_family: BSD
   summary: Python package to support GATK gCNV calling.
   dev_url: https://github.com/broadinstitute/gatk
+extra:
+  additional-platforms:
+    - linux-aarch64
