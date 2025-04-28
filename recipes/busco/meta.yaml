@@ -7,7 +7,7 @@ package:
   version: {{ version }}
 
 build:
-  number: 0
+  number: 1
   noarch: python
   run_exports:
     - {{ pin_subpackage(name, max_pin="x") }}
@@ -75,6 +75,9 @@ about:
   doc_url: "https://busco.ezlab.org/busco_userguide.html"
 
 extra:
+  additional-platforms:
+    - linux-aarch64
+
   container:
     # Necessary to allow Busco to download files from the internet when used with Singularity
     # and default bind paths (see also https://github.com/bioconda/bioconda-recipes/issues/11583).
