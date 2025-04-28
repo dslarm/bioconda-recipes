@@ -25,10 +25,8 @@ requirements:
     - make
     - pkg-config
     - llvm-openmp  # [osx]
-    - libgomp  # [linux]
   host:
     - llvm-openmp  # [osx]
-    - libgomp  # [linux]
     - zlib
     - zstd
     - jemalloc
@@ -37,7 +35,6 @@ requirements:
     - pybind11
   run:
     - llvm-openmp  # [osx]
-    - libgomp  # [linux]
     - sdsl-lite
     - jemalloc
 
