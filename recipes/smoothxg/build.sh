@@ -11,9 +11,14 @@ export CXXFLAGS="${CXXFLAGS} -O3"
 
 mkdir -p "${PREFIX}/bin"
 
-sed -i.bak -e 's/-msse4.1/-march=sandybridge -Ofast/g' deps/spoa/CMakeLists.txt
-sed -i.bak -e 's/-march=native/-march=sandybridge -Ofast/g' deps/spoa/CMakeLists.txt
-sed -i.bak -e 's/-march=native/-march=sandybridge -Ofast/g' deps/abPOA/CMakeLists.txt
+if [[ "$(uname -m)" == "aarch64" ]]; then
+    MARCH="-march=armv8.1-a"
+else
+    MARCH="-march=sandybridge"
+fi
+sed -i.bak -e 's/-msse4.1/$(MARCH) -Ofast/g' deps/spoa/CMakeLists.txt
+sed -i.bak -e 's/-march=native/$(MARCH) -Ofast/g' deps/spoa/CMakeLists.txt
+sed -i.bak -e 's/-march=native/$(MARCH) -Ofast/g' deps/abPOA/CMakeLists.txt
 sed -i.bak -e 's|VERSION 3.16 FATAL_ERROR|VERSION 3.5|' CMakeLists.txt
 sed -i.bak -e 's|VERSION 3.2 FATAL_ERROR|VERSION 3.5|' deps/WFA/CMakeLists.txt
 sed -i.bak -e 's|VERSION 3.2|VERSION 3.5|' deps/abPOA/CMakeLists.txt
@@ -44,6 +49,6 @@ rm -rf *.bak
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Generic \
   -DCMAKE_CXX_COMPILER="${CXX}" \
   -DCMAKE_CXX_FLAGS="${CXXFLAGS}" \
-  -DEXTRA_FLAGS="-march=sandybridge -Ofast" -Wno-dev
+  -DEXTRA_FLAGS="$(MARCH) -Ofast" -Wno-dev
 cmake --build build -j "${CPU_COUNT}"
 install -v -m 0755 bin/* "${PREFIX}/bin"
