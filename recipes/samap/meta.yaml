@@ -10,7 +10,10 @@ source:
   sha256: "a1358b997d41c062a838e963fbdeb437af66007b5b4580a2cbea59cdc6a774fa"
 
 build:
-  number: 0
+  number: 1
+  run_exports:
+    - {{ pin_subpackage(name, max_pin = "x") }}
+
   noarch: python
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
 
@@ -39,6 +42,9 @@ about:
   summary: "The SAMap algorithm"
 
 extra:
+  additional-platforms:
+    - linux-aarch64
+
   recipe-maintainers:
     - atarashansky
     - pinin4fjords
