@@ -10,7 +10,7 @@ source:
   sha256: f238b86d5d4f8fe756970d3f544aa69ca825a57a8883507fd0866f4c02de44d0
 
 build:
-  number: 0
+  number: 1
   skip: True  # [py < 37 or py > 311 or target_platform == "osx-64"]
   run_exports:
     - {{ pin_subpackage('immuneml', max_pin="x") }}
@@ -71,6 +71,9 @@ about:
   dev_url: "https://github.com/uio-bmi/immuneML"
 
 extra:
+  additional-platforms:
+    - linux-aarch64
+
   skip-lints:
     - cython_must_be_in_host
   recipe-maintainers:
