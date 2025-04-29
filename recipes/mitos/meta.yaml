@@ -10,7 +10,7 @@ source:
   sha256: 88fc8980c815ae8497518ee7ff58ff69e51b1a35c1efe2ae9b0925b7c4f364f5
 
 build:
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
   noarch: python
   run_exports:
@@ -73,5 +73,8 @@ about:
   dev_url: https://gitlab.com/Bernt/MITOS 
 
 extra:
+  additional-platforms:
+    - linux-aarch64
+
   recipe-maintainers:
     - bernt-matthias
