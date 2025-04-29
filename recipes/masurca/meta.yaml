@@ -12,7 +12,7 @@ source:
     - 0001-install.sh.patch
 
 build:
-  number: 1
+  number: 2
   skip: True  # [osx]
   run_exports:
     - {{ pin_subpackage(name, max_pin='x') }}
@@ -56,6 +56,9 @@ about:
     MinION reads for hybrid assembly.
 
 extra:
+  additional-platforms:
+    - linux-aarch64
+
   identifiers:
     - biotools:masurca
     - doi:10.1093/bioinformatics/btt476
