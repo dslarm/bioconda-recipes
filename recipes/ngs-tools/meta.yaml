@@ -10,7 +10,7 @@ source:
   sha256: "ffb59cdebb5c9cc6ee39ad52a14930e493e870d48303821c6f97563a50f4bb3c"
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
   run_exports:
@@ -53,5 +53,8 @@ about:
   dev_url: "https://github.com/Lioscro/ngs-tools"
 
 extra:
+  additional-platforms:
+    - linux-aarch64
+
   recipe-maintainers:
     - Maarten-vd-Sande
