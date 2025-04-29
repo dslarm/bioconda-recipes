@@ -10,7 +10,7 @@ source:
   sha256: "89e212d3ebfdef19ed51c2cf74a55df546ce55e24638f3d7e044587dfb2200b4"
 
 build:
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . --no-deps --no-build-isolation --no-cache-dir -vvv"
   noarch: python
   entry_points:
@@ -79,5 +79,8 @@ about:
     `conda install -c conda-forge -c bioconda influx_si`
 
 extra:
+  additional-platforms:
+    - linux-aarch64
+
   recipe-maintainers:
     - sgsokol
