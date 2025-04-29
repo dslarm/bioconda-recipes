@@ -11,7 +11,7 @@ source:
     folder: scanpy-scripts
 
 build:
-  number: 0
+  number: 1
   noarch: python
   run_exports: '{{ pin_compatible("scanpy-scripts", max_pin="x.x") }}'
   entry_points:
@@ -114,6 +114,9 @@ about:
   summary: Scripts for using scanpy from the command line
 
 extra:
+  additional-platforms:
+    - linux-aarch64
+
   container:
     # click requires a Unicode locale
     extended-base: True
