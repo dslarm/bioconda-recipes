@@ -1,8 +1,9 @@
+{% set name = "ariba" %}
 {% set version = "2.14.6" %}
 {% set sha256 = "5cf0fb1f40591225e3aa8e4d2b804513f580e35f450e0699824b03386e4bc23c" %}
 
 package:
-  name: ariba
+  name: {{name}}
   version: {{ version }}
 
 source:
@@ -14,7 +15,10 @@ source:
     - ref_genes_getter.patch
 
 build:
-  number: 7
+  number: 8
+  run_exports:
+    - {{ pin_subpackage(name, max_pin = "x") }}
+
   # Skipping py>=36 on osx because the bowtie2 <2.4.0 recipes are currently skipped on osx.
   skip: True  # [py<30 or (py>=36 and osx) or py > 39]
   script: python -m pip install --no-deps --ignore-installed .
@@ -61,6 +65,9 @@ about:
   summary: 'ARIBA: Antibiotic Resistance Identification By Assembly'
 
 extra:
+  additional-platforms:
+    - linux-aarch64
+
   container:
     # matplotlib depends on libGL.so.1 from the system
     extended-base: true
