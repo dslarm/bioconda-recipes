@@ -1,7 +1,8 @@
+{% set name = "parsnp" %}
 {% set version = "2.1.3" %}
 
 package:
-  name: parsnp
+  name: {{name}}
   version: '{{version}}'
 
 source:
@@ -9,7 +10,7 @@ source:
   sha256: 16085138fd05d7be96efcaec115ab33361ec918cfcde9ba790807a615c3fa4f2
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage('parsnp', max_pin="x") }}
 
@@ -46,3 +47,6 @@ about:
   summary: Parsnp is a command-line-tool for efficient microbial core genome alignment and SNP detection.
   doc_url: "https://harvest.readthedocs.io/en/latest/content/parsnp/tutorial.html"
   dev_url: https://github.com/marbl/parsnp
+extra:
+  additional-platforms:
+    - linux-aarch64
