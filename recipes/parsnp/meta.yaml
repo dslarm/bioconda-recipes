@@ -24,11 +24,9 @@ requirements:
   host:
     - zlib
     - llvm-openmp  # [osx]
-    - openmp  # [linux]
   run:
     - python >=3.7
     - llvm-openmp  # [osx]
-    - openmp  # [linux]
     - biopython
     - numpy
     - zlib
