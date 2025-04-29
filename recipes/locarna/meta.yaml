@@ -1,9 +1,10 @@
+{% set name = "locarna" %}
 {% set version="2.0.1" %}
 {% set sha256="1f50748d2f8f4bf5888394154d366e0eed8d4e20a3cd0da8b33e200aa1d9edf7" %}
 {% set vrnaversion="2.5.1" %}
 
 package:
-  name: locarna
+  name: {{name}}
   version: {{ version }}
 
 about:
@@ -13,7 +14,7 @@ about:
   summary: Multiple alignment of RNAs
 
 build:
-  number: 1
+  number: 2
   run_exports:
     - {{ pin_subpackage('locarna', max_pin="x.x") }}
 
@@ -46,6 +47,9 @@ test:
     - echo -e ">D10744\nGGAAAAUUGAUCAUCGGCAAGAUAAGUUAUUUACUAAAUAAUAGGAUUUAAUAACCUGGUGAGUUCGAAUCUCACAUUUUCCG" | LC_ALL=en_US.UTF-8 locarna_rnafold_pp --in-loop --stacking --noLP -p0.5 |head -n3
 
 extra:
+  additional-platforms:
+    - linux-aarch64
+
   identifiers:
     - biotools:locarna
     - doi:10.1371/journal.pcbi.0030065
