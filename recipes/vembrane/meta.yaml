@@ -1,7 +1,8 @@
+{% set name = "vembrane" %}
 {% set version = "1.0.7" %}
 
 package:
-  name: vembrane
+  name: {{name}}
   version: {{ version }}
 
 source:
@@ -9,7 +10,7 @@ source:
   sha256: 4e94ff702662d2b2cd3043525500c250661a51a39dec69ca4ef94d17ceb51892
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - vembrane = vembrane.cli:main
   noarch: python
@@ -45,6 +46,9 @@ about:
   summary: Filter VCF/BCF files with Python expressions.
 
 extra:
+  additional-platforms:
+    - linux-aarch64
+
   recipe-maintainers:
     - felixmoelder
     - mbargull
