@@ -12,7 +12,7 @@ source:
 
 build:
   skip: True  # [osx]
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage("pbmm2", max_pin="x") }}
 about:
@@ -21,6 +21,9 @@ about:
   summary: A minimap2 frontend for PacBio native data formats
 
 extra:
+  additional-platforms:
+    - linux-aarch64
+
   recipe-maintainers:
     - armintoepfer
     - pb-dseifert
