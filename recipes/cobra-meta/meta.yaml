@@ -14,7 +14,7 @@ build:
     - cobra-meta = cobra:main
   noarch: python
   script: "{{ PYTHON }} -m pip install . -vv"
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage('cobra-meta', max_pin="x") }}
 
@@ -39,6 +39,9 @@ about:
   summary: 'COBRA is a tool to get higher quality viral genomes assembled from metagenomes.'
 
 extra:
+  additional-platforms:
+    - linux-aarch64
+
   identifiers:
     - doi:10.1101/2023.05.30.542503
   recipe-maintainers:
