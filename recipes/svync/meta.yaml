@@ -12,7 +12,7 @@ source:
     md5: 6668160e5708fdbbc12e362225e79155 # [linux]
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage(name, max_pin="x.x") }}
 
@@ -26,6 +26,9 @@ test:
     - bgzip -h
 
 extra:
+  additional-platforms:
+    - linux-aarch64
+
   skip-lints:
     - should_be_noarch_generic  # uses per platform binaries
     - should_not_be_noarch_source  # uses binaries
