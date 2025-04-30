@@ -10,13 +10,16 @@ about:
   summary: Identification of potential quadruplex forming sequences
 
 build:
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
   run_exports: '{{ pin_subpackage("bioconductor-pqsfinder", max_pin="x.x") }}'
 
 extra:
+  additional-platforms:
+    - linux-aarch64
+
   identifiers:
     - biotools:pqsfinder
     - doi:10.1093/bioinformatics/btv272
