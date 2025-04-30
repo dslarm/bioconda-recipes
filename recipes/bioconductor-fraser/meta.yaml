@@ -10,13 +10,16 @@ about:
   summary: Find RAre Splicing Events in RNA-Seq Data
 
 build:
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
   run_exports: '{{ pin_subpackage("bioconductor-fraser", max_pin="x.x") }}'
 
 extra:
+  additional-platforms:
+    - linux-aarch64
+
   identifiers:
     - https://doi.org/10.1038/s41467-020-20573-7
   recipe-maintainers:
