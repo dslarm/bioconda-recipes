@@ -10,7 +10,7 @@ source:
   sha256: d51d680681bd5d63ae40d92a035705f87a1963b49a8d9154802368ce4f3eca91
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - ashlar=ashlar.scripts.ashlar:main
     - preview_slide=ashlar.scripts.preview_slide:main
@@ -53,5 +53,8 @@ about:
   doc_url: https://labsyspharm.github.io/ashlar/
 
 extra:
+  additional-platforms:
+    - linux-aarch64
+
   recipe-maintainers:
     - alliecreason
