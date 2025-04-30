@@ -13,7 +13,7 @@ source:
     - 'https://depot.galaxyproject.org/software/bioconductor-{{ name|lower }}/bioconductor-{{ name|lower }}_{{ version }}_src_all.tar.gz'
   md5: 4288983863e4523b5c7e7750691e8987
 build:
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
@@ -67,6 +67,9 @@ about:
   summary: 'Combinatorial and Differential Chromatin State Analysis for ChIP-Seq Data'
   description: 'This package implements functions for combinatorial and differential analysis of ChIP-seq data. It includes uni- and multivariate peak-calling, export to genome browser viewable files, and functions for enrichment analyses.'
 extra:
+  additional-platforms:
+    - linux-aarch64
+
   identifiers:
     - biotools:chromstar
     - doi:10.1101/038612
