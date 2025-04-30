@@ -10,7 +10,7 @@ about:
   summary: 'GENetic EStimation and Inference in Structured samples (GENESIS): Statistical methods for analyzing genetic data from samples with population structure and/or relatedness'
 
 build:
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
@@ -74,3 +74,6 @@ test:
   commands:
     - $R -e "library('{{ name }}')"
 
+extra:
+  additional-platforms:
+    - linux-aarch64
