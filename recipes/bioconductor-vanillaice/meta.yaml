@@ -10,13 +10,16 @@ about:
   summary: A Hidden Markov Model for high throughput genotyping arrays
 
 build:
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
   run_exports: '{{ pin_subpackage("bioconductor-vanillaice", max_pin="x.x") }}'
 
 extra:
+  additional-platforms:
+    - linux-aarch64
+
   identifiers:
     - biotools:vanillaice
   parent_recipe:
