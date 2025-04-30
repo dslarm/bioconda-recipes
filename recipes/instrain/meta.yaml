@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . -vvv --no-deps --no-build-isolation --no-cache-dir"
   run_exports:
     - {{ pin_subpackage('instrain', max_pin="x.x") }}
@@ -49,3 +49,6 @@ about:
   license_family: MIT
   summary: "Calculation of strain-level metrics."
   dev_url: "https://github.com/MrOlm/inStrain"
+extra:
+  additional-platforms:
+    - linux-aarch64
