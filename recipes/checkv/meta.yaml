@@ -10,7 +10,7 @@ source:
   sha256: 2438516f270191267a9860dfe31bf596d64a4fbc16be922b46fb6a4fd98d762a
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: "{{ PYTHON }} -m pip install . -vv"
   entry_points:
@@ -47,6 +47,9 @@ about:
   summary: "Assess the quality of metagenome-assembled viral genomes."
 
 extra:
+  additional-platforms:
+    - linux-aarch64
+
   identifiers:
     - biotools:checkv
     - doi:10.1038/s41587-020-00774-7
