@@ -14,7 +14,7 @@ build:
     - amulety=amulety.amulety:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vvv --no-deps --no-build-isolation --no-cache-dir
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage('amulety', max_pin='x') }}
 
@@ -53,5 +53,8 @@ about:
   license_file: LICENSE
 
 extra:
+  additional-platforms:
+    - linux-aarch64
+
   recipe-maintainers:
     - ggabernet
