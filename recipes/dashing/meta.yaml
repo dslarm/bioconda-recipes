@@ -1,6 +1,6 @@
 {% set name = "dashing" %}
-{% set version = "1.0" %}
-{% set sha256 = "f4784e0c8863c266c2b826078bfe46fca4943fcde5799337891c333c9e0d29b4" %}
+{% set version = "1.0.3" %}
+{% set sha256 = "8103a7353eb3ca13579766fcb3db778c64c48beaa7e77532778a4ca8cb791655" %}
 
 package:
   name: {{name}}
@@ -8,14 +8,13 @@ package:
 
 build:
   skip: True  # [osx]
-  number: 4
+  number: 0
   run_exports:
     - {{ pin_subpackage(name, max_pin = "x") }}
 
 
 source:
-  git_url: https://github.com/dnbaker/dashing
-  git_rev: v{{ version }}
+  url: https://github.com/dnbaker/dashing/archive/refs/tags/v{{version}}.tar.gz
   sha256: {{sha256}}
 
 requirements:
@@ -23,7 +22,6 @@ requirements:
     - {{ compiler('cxx') }}
     - {{ compiler('c') }}
     - llvm-openmp  # [osx]
-    - libgomp      # [linux]
     - zstd
     - make
   host:
