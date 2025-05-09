@@ -16,6 +16,8 @@ build:
 source:
   url: https://github.com/dnbaker/dashing/archive/refs/tags/v{{version}}.tar.gz
   sha256: {{sha256}}
+  patches:
+    - popcnt.patch   # [aarch64]
 
 requirements:
   build:
