@@ -9,7 +9,7 @@ pushd bonsai
 rm -rf zstd
 git clone --recursive --single-branch --branch dev https://github.com/facebook/zstd
 pushd zstd
-make CC=$CC lib && mv lib/libzstd.a ..
+make -j ${CPU_COUNT} CC=$CC lib && mv lib/libzstd.a ..
 popd
 popd
 
