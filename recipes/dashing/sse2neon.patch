@@ -1,0 +1,122 @@
+diff -ru a/dashing/bonsai/clhash/src/clhash.c b/dashing/bonsai/clhash/src/clhash.c
+--- a/dashing/bonsai/clhash/src/clhash.c	2025-05-12 09:34:11.155083301 +0000
++++ b/dashing/bonsai/clhash/src/clhash.c	2025-05-12 09:04:35.823194158 +0000
+@@ -2,7 +2,11 @@
+ 
+ #include <assert.h>
+ #include <string.h>
++#ifdef __aarch64__
++#include "../../../sse2neon/sse2neon.h"
++#else
+ #include <x86intrin.h>
++#endif
+ 
+ #ifdef __WIN32
+ #define posix_memalign(p, a, s) (((*(p)) = _aligned_malloc((s), (a))), *(p) ?0 :errno)
+diff -ru a/dashing/bonsai/hll/include/aesctr/wy.h b/dashing/bonsai/hll/include/aesctr/wy.h
+--- a/dashing/bonsai/hll/include/aesctr/wy.h	2025-05-12 09:34:14.825169208 +0000
++++ b/dashing/bonsai/hll/include/aesctr/wy.h	2025-05-12 09:45:46.621455295 +0000
+@@ -13,7 +13,11 @@
+ #include <cinttypes>
+ #include <cstdio>
+ #include <random>
++#ifdef __aarch64__
++#include "../../../../sse2neon/sse2neon.h"
++#else
+ #include <x86intrin.h>
++#endif
+ 
+ #ifndef CONST_IF
+ #  if defined(__cpp_if_constexpr) && __cplusplus >= __cpp_if_constexpr
+diff -ru a/dashing/bonsai/hll/include/sketch/count_eq.h b/dashing/bonsai/hll/include/sketch/count_eq.h
+--- a/dashing/bonsai/hll/include/sketch/count_eq.h	2025-05-12 09:34:14.955172251 +0000
++++ b/dashing/bonsai/hll/include/sketch/count_eq.h	2025-05-12 09:32:17.962427917 +0000
+@@ -1,6 +1,10 @@
+ #ifndef SKETCH_COUNT_EQ_H__
+ #define SKETCH_COUNT_EQ_H__
++#ifdef __aarch64__
++#include "../../../../sse2neon/sse2neon.h"
++#else
+ #include <x86intrin.h>
++#endif
+ #include <sys/mman.h>
+ #include "sketch/common.h"
+ 
+diff -ru a/dashing/bonsai/hll/include/sketch/div.h b/dashing/bonsai/hll/include/sketch/div.h
+--- a/dashing/bonsai/hll/include/sketch/div.h	2025-05-12 09:34:14.955172251 +0000
++++ b/dashing/bonsai/hll/include/sketch/div.h	2025-05-12 10:24:47.106935927 +0000
+@@ -8,8 +8,12 @@
+ #include <algorithm>
+ 
+ #ifdef __AVX2__
++#ifdef __aarch64__
++#include "../../../../sse2neon/sse2neon.h"
++#else
+ #include <x86intrin.h>
+ #endif
++#endif
+ 
+ #undef INLINE
+ #if __GNUC__ || __clang__
+diff -ru a/dashing/bonsai/hll/include/sketch/integral.h b/dashing/bonsai/hll/include/sketch/integral.h
+--- a/dashing/bonsai/hll/include/sketch/integral.h	2025-05-12 09:34:14.955172251 +0000
++++ b/dashing/bonsai/hll/include/sketch/integral.h	2025-05-12 10:25:02.077292863 +0000
+@@ -2,7 +2,11 @@
+ #define SKETCH_INTEGRAL_H
+ #include "./macros.h"
+ #include <cstring>
+-#include "x86intrin.h"
++#ifdef __aarch64__
++#include "../../../../sse2neon/sse2neon.h"
++#else
++#include <x86intrin.h>
++#endif
+ #include <cstdint>
+ #include <climits>
+ #include <limits>
+diff -ru a/dashing/bonsai/hll/include/sketch/lpcqf.h b/dashing/bonsai/hll/include/sketch/lpcqf.h
+--- a/dashing/bonsai/hll/include/sketch/lpcqf.h	2025-05-12 09:34:14.955172251 +0000
++++ b/dashing/bonsai/hll/include/sketch/lpcqf.h	2025-05-12 10:24:33.276606434 +0000
+@@ -10,7 +10,11 @@
+ #include <vector>
+ #include <memory>
+ 
++#ifdef __aarch64__
++#include "../../../../sse2neon/sse2neon.h"
++#else
+ #include <x86intrin.h>
++#endif
+ 
+ #include "aesctr/wy.h"
+ #include "sketch/sseutil.h"
+diff -ru a/dashing/bonsai/hll/include/vec/vec.h b/dashing/bonsai/hll/include/vec/vec.h
+--- a/dashing/bonsai/hll/include/vec/vec.h	2025-05-12 09:34:14.955172251 +0000
++++ b/dashing/bonsai/hll/include/vec/vec.h	2025-05-12 10:57:37.474177954 +0000
+@@ -6,7 +6,11 @@
+ #else
+ #    define NO_SLEEF
+ #endif
+-#include "x86intrin.h"
++#ifdef __aarch64__
++#include "../../../../sse2neon/sse2neon.h"
++#else
++#include <x86intrin.h>
++#endif
+ #include <cmath>
+ #include <iterator>
+ #include <type_traits>
+diff -ru a/dashing/bonsai/klib/ksw.c b/dashing/bonsai/klib/ksw.c
+--- a/dashing/bonsai/klib/ksw.c	2025-05-12 09:34:11.165083536 +0000
++++ b/dashing/bonsai/klib/ksw.c	2025-05-12 09:04:35.823194158 +0000
+@@ -25,7 +25,11 @@
+ 
+ #include <stdlib.h>
+ #include <stdint.h>
++#ifdef __aarch64__
++#include "../../sse2neon/sse2neon.h"
++#else
+ #include <emmintrin.h>
++#endif
+ #include "ksw.h"
+ 
+ #ifdef __GNUC__

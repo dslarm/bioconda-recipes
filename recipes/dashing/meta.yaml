@@ -14,22 +14,28 @@ build:
 
 
 source:
-  git_url: https://github.com/dnbaker/dashing
-  git_rev: v{{ version }}
-  sha256: {{sha256}}
-  patches:
-    - popcnt.patch   # [aarch64]
+  - git_url: https://github.com/dnbaker/dashing
+    git_rev: v{{ version }}
+    sha256: {{sha256}}
+    patches:
+      - popcnt.patch   # [aarch64]
+      - sse2neon.patch  # [aarch64]
+  - git_url: https://github.com/DLTcollab/sse2neon
+    git_rev: v1.8.0
+    sha256: e251746e3b761f3f0de1ad462b1efe53532341b6b0498d394765fceb85ce8a46
+    folder: sse2neon
 
 requirements:
   build:
     - {{ compiler('cxx') }}
     - {{ compiler('c') }}
     - llvm-openmp  # [osx]
-    - zstd
     - make
   host:
     - zlib
+    - zstd
   run:
+    - zstd
     - zlib
 
 test:
