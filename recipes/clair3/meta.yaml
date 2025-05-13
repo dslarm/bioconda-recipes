@@ -10,7 +10,7 @@ source:
   sha256: ec05bd70fe9d29d8d4defe0d6d0af2fbd9cdfbe9c532f3d0090f8ad947a7d1f5
 
 build:
-  number: 0
+  number: 1
   skip: True  # [osx]
   run_exports:
     - {{ pin_subpackage(name, max_pin="x") }}
@@ -50,6 +50,9 @@ test:
     - which clair3.py
     - run_clair3.sh -v
 extra:
+  additional-platforms:
+    - linux-aarch64
+
   container:
     extended-base: true
 
