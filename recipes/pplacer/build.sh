@@ -13,6 +13,10 @@ for i in guppy pplacer rppr ; do
     fi
 done
 
+if [ "$(uname)" == "Linux" ]; then
+    # only necessary for gsl 2.7 / pplacers 1.1.alpha20
+    ln -s $PREFIX/lib/libgsl.so $PREFIX/lib/libgsl.so.27 
+fi
 
 cp -r scripts $PREFIX/bin
 
