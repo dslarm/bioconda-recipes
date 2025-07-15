@@ -22,7 +22,8 @@ build:
 
 requirements:
   run:
-    - gsl
+    - gsl =2.7     # [linux]
+    - gsl          # [osx]
 
 test:
   commands:
