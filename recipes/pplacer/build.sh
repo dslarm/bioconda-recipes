@@ -1,8 +1,4 @@
 #!/bin/bash
-set -x -e
-
-env
-
 mkdir -p $PREFIX/bin
 
 cd $SRC_DIR
@@ -18,8 +14,6 @@ done
 
 if [ "$(uname)" == "Linux" ]; then
     # only necessary for gsl 2.7 / pplacers 1.1.alpha20
-    ls $PREFIX/lib
-    
     ln -s $PREFIX/lib/libgsl.so $PREFIX/lib/libgsl.so.27 
 fi
 
