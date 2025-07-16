@@ -1,5 +1,9 @@
 #!/bin/bash
 mkdir -p $PREFIX/bin
+set -x -e
+
+ls $PREFIX/lib
+
 
 cd $SRC_DIR
 
