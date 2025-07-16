@@ -1,5 +1,8 @@
 #!/bin/bash
 set -x -e
+
+env
+
 mkdir -p $PREFIX/bin
 
 cd $SRC_DIR
