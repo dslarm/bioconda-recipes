@@ -1,9 +1,10 @@
+{% set name = "intarna" %}
 {% set INTARNA_VERSION = "3.4.1" %}
 {% set INTARNA_SHA256  = "4fd338a9a7a62f4398a27f41783120abaad9bccdecd39387c436adb0601f0ed8" %}
 {% set VRNA_VERSION = "2.4.14" %}
 
 package:
-  name: intarna
+  name: {{name}}
   version: {{INTARNA_VERSION}}
 
 about:
@@ -12,7 +13,7 @@ about:
   summary: Efficient RNA-RNA interaction prediction incorporating seeding and accessibility of interacting sites
 
 build:
-  number: 2
+  number: 3
   run_exports:
     - {{ pin_subpackage('intarna', max_pin="x.x") }}
 
@@ -45,6 +46,7 @@ test:
 extra:
   additional-platforms:
     - linux-aarch64
+    - osx-arm64
   identifiers:
     - biotools:intarna
     - doi:10.1093/nar/gkx279
