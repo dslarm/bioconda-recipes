@@ -1,5 +1,5 @@
 {% set name = "nbitk" %}
-{% set version = "0.5.3" %}
+{% set version = "0.6.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/nbitk-{{ version }}.tar.gz
-  sha256: 76127296604902362e50077d6996fee9ffeef0f19f614e3f46475a6bf0dbce0a
+  sha256: 42d4e0ab412d31606390ea410c35e7caf58df4fabd2c9f675f17be3f916fc8d7
 
 build:
   number: 0
@@ -28,7 +28,6 @@ requirements:
     - biopython
     - pandas
     - openpyxl
-    - ete3
     - requests
     - minio
     - pyyaml
