@@ -1,9 +1,13 @@
+{% set name = "ra" %}
 package:
-  name: ra
+  name: {{name}}
   version: "0.9"
 
 build:
-  number: 7
+  number: 8
+  run_exports:
+    - {{ pin_subpackage(name, max_pin = "x") }}
+
   skip: True # [osx]
 
 source:
@@ -27,3 +31,7 @@ about:
   license_file: LICENSE
   summary: Ra is short for RNA Assembler and it is a C++ implementation of an overlap-layout-consensus transcriptome assembler.
 
+extra:
+  additional-platforms:
+    - linux-aarch64
+    - osx-arm64
