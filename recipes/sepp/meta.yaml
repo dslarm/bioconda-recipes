@@ -58,5 +58,4 @@ extra:
     - biotools:sepp
   additional-platforms:
     - linux-aarch64
-#     osx-arm64 builds but hangs in tests
-#    - osx-arm64
+    - osx-arm64
