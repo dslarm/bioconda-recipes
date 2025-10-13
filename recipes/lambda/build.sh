@@ -1,5 +1,6 @@
 #!/bin/bash
-
+set -xe
+#if [ $(uname -s) == Darwin -a $(uname -m) != arm64 ]; then
 if [ $(uname -s) == Darwin ]; then
     # See https://conda-forge.org/docs/maintainer/knowledge_base.html#newer-c-features-with-old-sdk
     export CXXFLAGS="${CXXFLAGS} -D_LIBCPP_DISABLE_AVAILABILITY"

@@ -8,17 +8,18 @@ package:
 source:
   url: https://github.com/seqan/lambda/releases/download/lambda-v{{ version }}/lambda3-{{ version }}-SourceWithSubmodules.tar.xz
   sha256: fb3388e8b5a9f33f7423699803eaef4e6b9838c11017bd5b0d2b07f66491f191
+  patches:
+    - cstddef.patch
 
 build:
   number: 2
-  skip: True  # [osx]
   run_exports:
     - {{ pin_subpackage('lambda', max_pin='x') }}
 
 requirements:
   build:
     - {{ compiler('cxx') }}
-    - cmake >=3.0.0
+    - cmake >=3.0.0,<4
     - libgomp      # [linux]
     - llvm-openmp  # [osx]
     - make
