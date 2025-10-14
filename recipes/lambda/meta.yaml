@@ -6,11 +6,15 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/seqan/lambda/releases/download/lambda-v{{ version }}/lambda3-{{ version }}-SourceWithSubmodules.tar.xz
-  sha256: fb3388e8b5a9f33f7423699803eaef4e6b9838c11017bd5b0d2b07f66491f191
-  patches:
-    - cstddef.patch
-    - compile-arm.patch
+  - url: https://github.com/seqan/lambda/releases/download/lambda-v{{ version }}/lambda3-{{ version }}-SourceWithSubmodules.tar.xz
+    sha256: fb3388e8b5a9f33f7423699803eaef4e6b9838c11017bd5b0d2b07f66491f191
+    patches:
+      - compile-arm.patch
+  - url: https://github.com/seqan/sharg-parser/releases/download/1.1.1/sharg-1.1.1-Source.tar.xz
+    sha256: 7330f06501718e7871e55e5fd70d0e41472cc8b34bd0e3519f8c5547510c671c
+    patches:
+      - cstddef.patch
+    folder: llvm-sharg
 
 build:
   number: 2

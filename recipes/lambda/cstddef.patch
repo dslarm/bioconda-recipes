@@ -1,6 +1,17 @@
-diff -ru a/lambda/submodules/sharg-parser/include/sharg/version.hpp b/lambda/submodules/sharg-parser/include/sharg/version.hpp
---- a/lambda/submodules/sharg-parser/include/sharg/version.hpp	2023-11-15 15:37:25
-+++ b/lambda/submodules/sharg-parser/include/sharg/version.hpp	2025-10-14 00:19:30
+diff -ru a/include/sharg/all.hpp b/include/sharg/all.hpp
+--- a/include/sharg/all.hpp	2023-11-15 15:37:25
++++ b/include/sharg/all.hpp	2025-10-14 09:17:45
+@@ -4,6 +4,7 @@
+ // This file may be used, modified and/or redistributed under the terms of the 3-clause BSD-License
+ // shipped with this file and also available at: https://github.com/seqan/sharg-parser/blob/main/LICENSE.md
+ // --------------------------------------------------------------------------------------------------------
++#include <iostream>
+ 
+ /*!\file
+  * \author Svenja Mehringer <svenja.mehringer AT fu-berlin.de>
+diff -ru a/include/sharg/version.hpp b/include/sharg/version.hpp
+--- a/include/sharg/version.hpp	2023-11-15 15:37:25
++++ b/include/sharg/version.hpp	2025-10-14 00:19:30
 @@ -8,7 +8,7 @@
  #pragma once
  
