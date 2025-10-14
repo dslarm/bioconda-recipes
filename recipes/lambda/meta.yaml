@@ -10,6 +10,7 @@ source:
   sha256: fb3388e8b5a9f33f7423699803eaef4e6b9838c11017bd5b0d2b07f66491f191
   patches:
     - cstddef.patch
+    - compile-arm.patch
 
 build:
   number: 2

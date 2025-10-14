@@ -1,0 +1,17 @@
+diff -ru a/lambda/src/CMakeLists.txt b/lambda/src/CMakeLists.txt
+--- a/lambda/src/CMakeLists.txt	2024-08-04 17:55:40
++++ b/lambda/src/CMakeLists.txt	2025-10-14 08:49:49
+@@ -157,7 +157,12 @@
+ 
+ add_executable (lambda3 ${LAMBDA_SOURCE_FILES})
+ target_link_libraries (lambda3 ${SEQAN_LIBRARIES} fmindex-collection sharg::sharg biocpp::core biocpp::io cereal::cereal)
+-set_target_properties (lambda3 PROPERTIES COMPILE_FLAGS "-mmmx -msse -msse2 -msse3 -mssse3 -msse4 -mpopcnt")
++
++if (CMAKE_SYSTEM_PROCESSOR STREQUAL "arm64" OR CMAKE_SYSTEM_PROCESSOR STREQUAL "aarch64")
++  set_target_properties (lambda3 PROPERTIES COMPILE_FLAGS "")
++else ()
++  set_target_properties (lambda3 PROPERTIES COMPILE_FLAGS "-mmmx -msse -msse2 -msse3 -mssse3 -msse4 -mpopcnt")
++endif()
+ 
+ # ----------------------------------------------------------------------------
+ # Man-pages

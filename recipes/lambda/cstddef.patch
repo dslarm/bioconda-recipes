@@ -1,0 +1,12 @@
+diff -ru a/lambda/submodules/sharg-parser/include/sharg/version.hpp b/lambda/submodules/sharg-parser/include/sharg/version.hpp
+--- a/lambda/submodules/sharg-parser/include/sharg/version.hpp	2023-11-15 15:37:25
++++ b/lambda/submodules/sharg-parser/include/sharg/version.hpp	2025-10-14 00:19:30
+@@ -8,7 +8,7 @@
+ #pragma once
+ 
+ #include <cstdint>
+-
++#include <cstddef>
+ /*!\file
+  * \brief Provides SHARG version macros and global variables.
+  * \author Svenja Mehringer <svenja.mehringer AT fu-berlin.de>
