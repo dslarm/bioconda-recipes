@@ -1,5 +1,5 @@
 {% set name = "zol" %}
-{% set version = "1.6.9" %}
+{% set version = "1.6.13" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/Kalan-Lab/zol/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 0bea2ab26b10f4aab5ce81d2efe6f3ab763db7d72182f2f73f0950f429e89be4
+  sha256: b60ba8504a1065743c549774fee79895d935f5fc74aaff1537aa5927c0e21ea9
 
 build:
   number: 0
@@ -29,8 +29,7 @@ requirements:
     - setuptools
     - r-base
     - biopython
-    - muscle >=5.0,<=5.1  # [osx]
-    - muscle >=5.0  # [not osx]
+    - muscle =5.1
     - mcl
     - pal2nal >=14.1
     - hmmer >=3.0.0
@@ -58,6 +57,7 @@ requirements:
     - miniprot >=0.13  # [not x86_64]
     - bioconductor-ggtree
     - ete3
+    - legacy-cgi 
     - codoff
     - gravis
     - colour
